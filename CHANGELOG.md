@@ -17,3 +17,6 @@ Timestamps are in UTC.
 | 8 | 2026-11-11 03:43 | Tested all 3 pages at desktop (1440px) and mobile (390px): every image loads, every internal link returns 200, fonts load, no sideways scrolling, mobile menu opens and navigates, FAQ accordion opens. |
 | 9 | 2026-11-11 03:44 | Fixed mobile order of the Residential Cleaning section on Home (from #3): the Kitchen list was showing below Bathroom. Each photo is now grouped with its own checklist so the order is right on phones. Re-ran the tests from #8; all passed. |
 | 10 | 2026-11-11 03:45 | Added `README.md` with how to go live on GitHub Pages and point swifycleaning.com at it. |
+| 11 | 2026-11-11 04:16 | Changed the GitHub repo from private to public (approved by owner) so it can use free GitHub Pages hosting. |
+| 12 | 2026-11-11 04:18 | Turned on GitHub Pages (source: `main` branch, `/ (root)` folder). First deploy succeeded; site is live at https://franchescabudiman.github.io/swify/ . The custom domain swifycleaning.com is not connected yet (see README "Going live" steps 2–4). |
+| 13 | 2026-11-11 04:21 | Tested the live site: all images and fonts load, the mobile menu works, and the BookingKoala form on Pricing loads and displays correctly ("Get Pricing & Book In 60 Seconds" → Home Cleaning). This confirms the booking embed from #5, which couldn't be tested in #8. |
