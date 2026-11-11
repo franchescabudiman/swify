@@ -1,29 +1,41 @@
-# Swify Cleaning website
+# Swify website
 
-Static rebuild of swifycleaning.com: plain HTML/CSS with no build step, so it can be hosted for free on GitHub Pages instead of Squarespace.
+Website for Swify, a Los Angeles home-cleaning referral service. It's plain HTML/CSS/JS hosted free on GitHub Pages, with no Squarespace.
 
 ```
-index.html            Home
-about-us/index.html   About Us + FAQs
-pricing/index.html    Pricing / booking (embedded BookingKoala form)
-assets/css/style.css  All styles
-assets/js/main.js     Mobile menu
-assets/img/           Images
-assets/fonts/         Poppins + Urbanist (self-hosted)
-CHANGELOG.md          Append-only log of every change
+index.html                Home
+add-ons/                  Add-ons: drag-to-explore canvas + list view
+for-professionals/        Recruiting page for independent cleaning businesses
+about/                    About, how we vet, FAQs
+book/                     Booking (embedded BookingKoala form)
+pricing/, about-us/       Redirects from the old Squarespace URLs
+assets/css/style.css      All styles
+assets/js/main.js         Header, mobile menu, scroll effects
+assets/js/addons.js       Add-ons canvas
+assets/img/addons/        Cut-out photos of each add-on
+assets/fonts/             Cormorant Garamond + Manrope (self-hosted)
+build.py                  Generates every page above
+CHANGELOG.md              Append-only log of every change
 ```
 
-To edit text, open the page's `index.html` on GitHub, click the pencil icon, change the words and commit. Add a line to `CHANGELOG.md` describing the change.
+## Editing
 
-## Going live
+All page text lives in `build.py`. Change it there, run `python3 build.py`, and commit. Don't hand-edit the generated `index.html` files, because the next build overwrites them.
 
-1. **Turn on GitHub Pages:** go to Settings → Pages, set Source to "Deploy from a branch", choose `main` / `(root)` and save. The site appears at `https://franchescabudiman.github.io/swify/` within a minute or two. On a free GitHub plan the repo has to be public for this.
-2. **Connect the domain:** in Settings → Pages → Custom domain, enter `www.swifycleaning.com` and save. GitHub adds a `CNAME` file to the repo.
-3. **Update DNS** wherever swifycleaning.com is registered (Squarespace Domains, if the domain was bought there):
-   - `A` records for `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - `CNAME` for `www` → `franchescabudiman.github.io`
-   - Remove the old Squarespace A/CNAME records.
-4. Once the domain shows as verified, tick **Enforce HTTPS**.
-5. **Before cancelling Squarespace:** if the domain itself is registered through Squarespace, cancelling the *website* plan is separate from the *domain*. Keep the domain renewing (or transfer it to another registrar) so swifycleaning.com doesn't lapse.
+- **Add or change an add-on:** edit the `ADDONS` list in `build.py`. Add a cut-out image (transparent background, `.webp`) with the same key to `assets/img/addons/`.
+- **Booking link:** `BOOK_URL` in `build.py`.
+- Add a line to `CHANGELOG.md` for every change. Never edit old lines.
 
-Booking, payments and customer accounts all live in BookingKoala, so nothing about bookings changes.
+## Image credits
+
+The add-on photos are from [Unsplash](https://unsplash.com) and are free to use under the Unsplash License. Backgrounds were removed for the site. The room photos come from the original Swify site.
+
+## Going live on swifycleaning.com
+
+GitHub Pages is on and the custom domain is set (`CNAME`). The remaining step is DNS, wherever the domain is registered:
+
+- `A` records for `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+- `CNAME` for `www` → `franchescabudiman.github.io`
+- Remove the old Squarespace A/CNAME records.
+
+Once GitHub's DNS check passes, tick **Enforce HTTPS** under Settings → Pages. Keep the domain renewing when you cancel the Squarespace website plan.

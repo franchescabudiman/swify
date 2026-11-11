@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Add-ons — Swify</title>
+  <meta name="description" content="Oven, fridge, dishes, laundry, linens, windows and more — the finishing touches for your Swify cleaning.">
+  <meta property="og:title" content="Add-ons — Swify">
+  <meta property="og:description" content="Oven, fridge, dishes, laundry, linens, windows and more — the finishing touches for your Swify cleaning.">
+  <meta property="og:image" content="../assets/img/hero.webp">
+  <meta name="theme-color" content="#f5f1ea">
+  <link rel="preload" href="../assets/fonts/cormorant-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="canvas-page">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="../">Swify<span>.</span></a>
+      <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="../">Home</a></li>
+        <li><a href="../add-ons/" aria-current="page">Add-ons</a></li>
+        <li><a href="../for-professionals/">For Professionals</a></li>
+        <li><a href="../about/">About</a></li>
+        <li><a class="btn btn-ink" href="../book/">Book a cleaning</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+
+    <h1 class="sr-only">Add-ons</h1>
+    <div class="canvas" id="canvas" aria-label="Explore add-ons. Drag to move around." tabindex="0"></div>
+    <div class="canvas-intro">
+      <p class="eyebrow">Add-ons</p>
+      <p class="title">The <em>finishing</em> touches.</p>
+      <p class="hint">Drag to explore · tap an item for details</p>
+    </div>
+    <aside class="addon-card" id="card" aria-live="polite" hidden>
+      <button class="close" aria-label="Close">×</button>
+      <img alt="">
+      <h2></h2>
+      <p></p>
+      <a class="btn btn-ink" href="../book/">Add when booking <span class="arr">→</span></a>
+    </aside>
+    <div class="canvas-bar">
+      <button class="pill" id="listBtn" aria-pressed="false"><span class="ico">☰</span> List view</button>
+      <span class="pill hint-pill">✛ Drag to explore</span>
+      <button class="pill round" id="zoomOut" aria-label="Zoom out">−</button>
+      <button class="pill round" id="zoomIn" aria-label="Zoom in">+</button>
+    </div>
+    <div class="list-view" id="list" hidden>
+      <div class="wrap">
+        <p class="eyebrow">Add-ons</p>
+        <h2 style="margin-bottom:40px">The <em>finishing</em> touches.</h2>
+        <ul><li><img src="../assets/img/addons/oven.webp" alt=""><div><strong>Inside the oven</strong><span>Racks, glass and interior degreased and wiped down.</span></div></li><li><img src="../assets/img/addons/fridge.webp" alt=""><div><strong>Inside the fridge</strong><span>Shelves and drawers emptied, wiped and neatly restocked.</span></div></li><li><img src="../assets/img/addons/dishes.webp" alt=""><div><strong>Dishes</strong><span>Hand-washed, dried and put away — or loaded and run.</span></div></li><li><img src="../assets/img/addons/laundry.webp" alt=""><div><strong>Laundry</strong><span>Washed, dried and folded, ready for the drawer.</span></div></li><li><img src="../assets/img/addons/linens.webp" alt=""><div><strong>Fresh linens</strong><span>Beds stripped and remade with crisp, fresh sheets.</span></div></li><li><img src="../assets/img/addons/window.webp" alt=""><div><strong>Interior windows</strong><span>Glass, frames and sills, left streak-free.</span></div></li><li><img src="../assets/img/addons/blinds.webp" alt=""><div><strong>Blinds</strong><span>Every slat dusted and wiped, top to bottom.</span></div></li><li><img src="../assets/img/addons/cabinet.webp" alt=""><div><strong>Cabinets & drawers</strong><span>Emptied, wiped inside and thoughtfully returned.</span></div></li><li><img src="../assets/img/addons/walls.webp" alt=""><div><strong>Wall wipe-down</strong><span>Scuffs and marks lifted from walls, doors and switches.</span></div></li><li><img src="../assets/img/addons/baseboards.webp" alt=""><div><strong>Baseboards</strong><span>Hand-wiped, corner to corner, room by room.</span></div></li><li><img src="../assets/img/addons/organizing.webp" alt=""><div><strong>Organizing</strong><span>Closets, pantries and drawers — edited and arranged.</span></div></li></ul>
+        <p style="margin-top:40px"><a class="btn btn-ink" href="../book/">Book with add-ons <span class="arr">→</span></a></p>
+      </div>
+    </div>
+
+  </main>
+  <script src="../assets/js/main.js"></script>
+  <script>window.SWIFY_ADDONS = [{"k": "oven", "name": "Inside the oven", "desc": "Racks, glass and interior degreased and wiped down."}, {"k": "fridge", "name": "Inside the fridge", "desc": "Shelves and drawers emptied, wiped and neatly restocked."}, {"k": "dishes", "name": "Dishes", "desc": "Hand-washed, dried and put away \u2014 or loaded and run."}, {"k": "laundry", "name": "Laundry", "desc": "Washed, dried and folded, ready for the drawer."}, {"k": "linens", "name": "Fresh linens", "desc": "Beds stripped and remade with crisp, fresh sheets."}, {"k": "window", "name": "Interior windows", "desc": "Glass, frames and sills, left streak-free."}, {"k": "blinds", "name": "Blinds", "desc": "Every slat dusted and wiped, top to bottom."}, {"k": "cabinet", "name": "Cabinets & drawers", "desc": "Emptied, wiped inside and thoughtfully returned."}, {"k": "walls", "name": "Wall wipe-down", "desc": "Scuffs and marks lifted from walls, doors and switches."}, {"k": "baseboards", "name": "Baseboards", "desc": "Hand-wiped, corner to corner, room by room."}, {"k": "organizing", "name": "Organizing", "desc": "Closets, pantries and drawers \u2014 edited and arranged."}]; window.SWIFY_UP = "../";</script>
+  <script src="../assets/js/addons.js"></script>
+</body>
+</html>
