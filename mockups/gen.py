@@ -56,9 +56,9 @@ def page(name, title, css, body):
 page("a", "Mockup A — Still life", """
 .a-hero{position:relative;height:100vh;min-height:760px;color:#f5f1ea;overflow:hidden}
 .a-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:78% center}
-.a-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,12,.35),rgba(20,16,12,0) 30%,rgba(20,16,12,.55))}
-.a-hero .copy{position:absolute;left:56px;bottom:64px;z-index:2}
-.a-hero h1{font-size:clamp(64px,8.4vw,132px);line-height:.92;font-weight:300}
+.a-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,12,.45),rgba(20,16,12,.05) 55%,rgba(20,16,12,.25))}
+.a-hero .copy{position:absolute;left:56px;top:150px;z-index:2}
+.a-hero h1{font-size:clamp(60px,7.4vw,116px);line-height:.92;font-weight:300}
 .a-hero .row{display:flex;align-items:center;gap:34px;margin-top:38px;font-size:12px;letter-spacing:.22em;text-transform:uppercase}
 .a-hero .btn{background:#f5f1ea;color:#1d1b19}
 .a-tri{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:18px;padding:18px}
