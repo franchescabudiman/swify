@@ -50,7 +50,7 @@ def page(name, title, css, body):
     open(f"{name}/index.html", "w").write(f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
 <title>{title}</title><link rel="stylesheet" href="../../assets/css/style.css"><style>{BASE_CSS}{css}</style></head>
-<body>{body.replace('../assets', '../../assets')}</body></html>""")
+<body>{body.replace('../assets', '../../assets')}<script>(function(){{var n=+new URLSearchParams(location.search).get('s')||0,k=0;Array.from(document.body.children).forEach(function(e){{if(e.tagName==='NAV'||e.tagName==='SCRIPT')return;if(k++<n)e.style.display='none';}});}})();</script></body></html>""")
 
 # ---------- A: Still life (cinematic full-bleed, almost no words) ----------
 page("a", "Mockup A — Still life", """
