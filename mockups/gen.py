@@ -22,7 +22,7 @@ ADDONS = ["oven", "fridge", "dishes", "laundry", "linens", "window", "blinds", "
 marquee = "".join(f'<img src="../assets/img/addons/{k}.webp" alt="">' for k in ADDONS)
 
 ADDON_SECTION = f"""
-<section class="teaser" style="padding:120px 0 110px">
+<section class="teaser" style="padding:120px 0 110px !important">
   <div class="wrap" style="display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap">
     <div><p class="eyebrow">Add-ons</p><h2>The <em>finishing</em> touches.</h2></div>
     <a class="btn btn-line" href="#">Explore add-ons <span class="arr">→</span></a>
@@ -31,6 +31,7 @@ ADDON_SECTION = f"""
 </section>"""
 
 BASE_CSS = """
+main section, body > section{padding:0}
 .m-nav{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:30px 56px;}
 .m-nav a{color:inherit;text-decoration:none}
 .m-nav .links{display:flex;gap:40px;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
@@ -54,7 +55,7 @@ def page(name, title, css, body):
 # ---------- A: Still life (cinematic full-bleed, almost no words) ----------
 page("a", "Mockup A — Still life", """
 .a-hero{position:relative;height:100vh;min-height:760px;color:#f5f1ea;overflow:hidden}
-.a-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.a-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:78% center}
 .a-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,12,.35),rgba(20,16,12,0) 30%,rgba(20,16,12,.55))}
 .a-hero .copy{position:absolute;left:56px;bottom:64px;z-index:2}
 .a-hero h1{font-size:clamp(64px,8.4vw,132px);line-height:.92;font-weight:300}
@@ -85,7 +86,7 @@ body{background:#f5f1ea}
 .b-hero .copy{display:flex;flex-direction:column;justify-content:flex-end;padding:0 56px 70px}
 .b-hero h1{font-size:clamp(60px,6.6vw,112px);line-height:.95;font-weight:300}
 .b-hero p.sub{margin:30px 0 40px;font-size:17px;color:#6f675c;max-width:30ch}
-.b-hero .photo{position:relative}.b-hero .photo img{width:100%;height:100%;object-fit:cover;display:block}
+.b-hero .photo{position:relative}.b-hero .photo img{width:100%;height:100%;object-fit:cover;object-position:center 85%;display:block}
 .b-hero .tag{position:absolute;right:28px;bottom:26px;color:#f5f1ea;font-size:11px;letter-spacing:.22em;text-transform:uppercase}
 .b-full{position:relative;height:88vh;min-height:620px}
 .b-full img{width:100%;height:100%;object-fit:cover;display:block}
@@ -111,11 +112,11 @@ body{background:#f5f1ea}
 # ---------- C: Gallery (dark, framed, wordmark) ----------
 page("c", "Mockup C — Gallery", """
 body{background:#161412;color:#efe9df}
-.c-hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:130px 56px 70px;text-align:center}
-.c-hero .word{font-family:var(--serif);font-weight:300;font-size:clamp(90px,15vw,240px);letter-spacing:.14em;line-height:.85;margin-right:-.14em}
-.c-hero .frame{margin:44px auto 0;width:min(1040px,80vw);aspect-ratio:16/8;overflow:hidden;outline:1px solid rgba(168,135,79,.6);outline-offset:14px}
+.c-hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:96px 56px 50px;text-align:center}
+.c-hero .word{font-family:var(--serif);font-weight:300;font-size:clamp(80px,11vw,170px);letter-spacing:.14em;line-height:.85;margin-right:-.14em}
+.c-hero .frame{margin:44px auto 0;width:min(1040px,80vw);aspect-ratio:16/6.4;overflow:hidden;outline:1px solid rgba(168,135,79,.6);outline-offset:14px}
 .c-hero .frame img{width:100%;height:100%;object-fit:cover;display:block}
-.c-hero .line{margin-top:48px;display:flex;gap:42px;align-items:center;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#b9b0a2}
+.c-hero .line{margin-top:44px;display:flex;gap:42px;align-items:center;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#b9b0a2}
 .c-hero .btn{background:#efe9df;color:#161412}
 .c-gal{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:330px 330px;gap:14px;padding:14px 56px 120px}
 .c-gal img{width:100%;height:100%;object-fit:cover;display:block}

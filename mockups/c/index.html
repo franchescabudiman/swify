@@ -1,6 +1,7 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
 <title>Mockup C — Gallery</title><link rel="stylesheet" href="../../assets/css/style.css"><style>
+main section, body > section{padding:0}
 .m-nav{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:30px 56px;}
 .m-nav a{color:inherit;text-decoration:none}
 .m-nav .links{display:flex;gap:40px;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
@@ -8,11 +9,11 @@
 .m-foot{padding:46px 56px;display:flex;justify-content:space-between;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8b8478;border-top:1px solid rgba(0,0,0,.08)}
 
 body{background:#161412;color:#efe9df}
-.c-hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:130px 56px 70px;text-align:center}
-.c-hero .word{font-family:var(--serif);font-weight:300;font-size:clamp(90px,15vw,240px);letter-spacing:.14em;line-height:.85;margin-right:-.14em}
-.c-hero .frame{margin:44px auto 0;width:min(1040px,80vw);aspect-ratio:16/8;overflow:hidden;outline:1px solid rgba(168,135,79,.6);outline-offset:14px}
+.c-hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:96px 56px 50px;text-align:center}
+.c-hero .word{font-family:var(--serif);font-weight:300;font-size:clamp(80px,11vw,170px);letter-spacing:.14em;line-height:.85;margin-right:-.14em}
+.c-hero .frame{margin:44px auto 0;width:min(1040px,80vw);aspect-ratio:16/6.4;overflow:hidden;outline:1px solid rgba(168,135,79,.6);outline-offset:14px}
 .c-hero .frame img{width:100%;height:100%;object-fit:cover;display:block}
-.c-hero .line{margin-top:48px;display:flex;gap:42px;align-items:center;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#b9b0a2}
+.c-hero .line{margin-top:44px;display:flex;gap:42px;align-items:center;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#b9b0a2}
 .c-hero .btn{background:#efe9df;color:#161412}
 .c-gal{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:330px 330px;gap:14px;padding:14px 56px 120px}
 .c-gal img{width:100%;height:100%;object-fit:cover;display:block}
@@ -29,7 +30,7 @@ body{background:#161412;color:#efe9df}
 <section class="c-q"><h2>Hand-selected. <em>Never</em> crowdsourced.</h2></section>
 <section class="c-gal"><img class="tall" src="https://images.unsplash.com/photo-1429117237875-aa29229d99f0?w=1600&q=80&auto=format" alt=""><img src="https://images.unsplash.com/photo-1791481708252-8bdee89a9ba3?w=900&q=80&auto=format" alt=""><img src="https://images.unsplash.com/photo-1753800558729-7929703f81de?w=900&q=80&auto=format" alt=""><img src="https://images.unsplash.com/photo-1781795035627-fa93f2863bba?w=900&q=80&auto=format" alt=""><img src="https://images.unsplash.com/photo-1678121039070-fedd1e9c2cf4?w=900&q=80&auto=format" alt=""></section>
 <div class="c-light">
-<section class="teaser" style="padding:120px 0 110px">
+<section class="teaser" style="padding:120px 0 110px !important">
   <div class="wrap" style="display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap">
     <div><p class="eyebrow">Add-ons</p><h2>The <em>finishing</em> touches.</h2></div>
     <a class="btn btn-line" href="#">Explore add-ons <span class="arr">→</span></a>
