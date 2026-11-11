@@ -94,6 +94,13 @@ def page(path, title, desc, body, current=None, dark_hero=False, body_class="", 
             <li>Los Angeles, California</li>
           </ul>
         </div>
+        <div>
+          <h4>Team</h4>
+          <ul>
+            <li><a href="{href('admin/')}">Admin sign-in</a></li>
+            <li><a href="{href('pro/')}">Professional portal</a></li>
+          </ul>
+        </div>
       </div>
       <div class="foot-bottom">
         <span>© 2026 Swify. All rights reserved.</span>
