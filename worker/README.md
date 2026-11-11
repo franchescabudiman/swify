@@ -36,6 +36,10 @@ A Cloudflare Worker with a D1 database (both on Cloudflare's free plan) and Stri
    - Endpoint 2 (optional), *connected accounts* events: `account.updated`. The portal also checks Stripe directly, so this one is a convenience.
 4. Put the worker URL into `API_BASE` in `/build.py`, run `python3 build.py`, and push.
 
+## Changing secrets (important)
+
+Editing a secret or variable in the Cloudflare dashboard creates a new Worker **version** that is *not* deployed on its own: the old values keep running. After any change, go to Workers & Pages → swify-api → Deployments, open the newest version's **⋯ → Promote version**, and deploy it to 100%. (Or push any commit, which redeploys.)
+
 ## Going live
 
 1. Run test bookings at `/book/new/` with Stripe test cards.
