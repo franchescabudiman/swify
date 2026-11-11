@@ -7,7 +7,11 @@ index.html                Home
 add-ons/                  Add-ons: drag-to-explore canvas + list view
 for-professionals/        Recruiting page for independent cleaning businesses
 about/                    About, how we vet, FAQs
-book/                     Booking (embedded BookingKoala form)
+book/                     Booking (BookingKoala until NEW_BOOKING_LIVE = True in build.py)
+book/new/, book/success/  New Stripe booking form + confirmation (testing)
+pro/                      Private portal for each cleaning business
+admin/                    Swify admin: bookings, professionals, form builder
+worker/                   Booking backend (Cloudflare Worker + Stripe Connect) — see worker/README.md
 pricing/, about-us/       Redirects from the old Squarespace URLs
 assets/css/style.css      All styles
 assets/js/main.js         Header, mobile menu, scroll effects

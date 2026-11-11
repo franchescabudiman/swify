@@ -1,0 +1,24 @@
+# Swify booking backend — Cloudflare Worker
+name = "swify-api"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+
+[vars]
+SITE_URL = "https://www.swifycleaning.com"
+ALLOWED_ORIGINS = "https://www.swifycleaning.com,https://swifycleaning.com,https://franchescabudiman.github.io"
+ALLOW_LOCALHOST = "false"
+# where the booking form lives: "/book/new/" while testing, "/book/" once live (match NEW_BOOKING_LIVE in build.py)
+BOOK_PATH = "/book/new/"
+
+# Create once in Cloudflare (Workers & Pages → D1 → Create database, name: swify),
+# then paste its Database ID below.
+[[d1_databases]]
+binding = "DB"
+database_name = "swify"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+migrations_dir = "migrations"
+
+# Secrets (set in Cloudflare → Worker → Settings → Variables and Secrets, type "Secret"):
+#   STRIPE_SECRET_KEY      sk_test_... (later sk_live_...)
+#   STRIPE_WEBHOOK_SECRET  whsec_...
+#   ADMIN_PASSWORD         at least 12 characters

@@ -5,7 +5,12 @@ Edit the content below, then run:  python3 build.py
 import os, json
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-BOOK_URL = "https://swify.bookingkoala.com/booknow"
+# Booking backend (Cloudflare Worker). Update after deploying the worker — see worker/README.md
+API_BASE = "https://swify-api.REPLACE.workers.dev"
+# False: /book/ keeps the BookingKoala form and the new system is testable at /book/new/.
+# True:  /book/ is the new Stripe booking form (also set BOOK_PATH = "/book/" in worker/wrangler.toml).
+NEW_BOOKING_LIVE = False
+BOOKINGKOALA_URL = "https://swify.bookingkoala.com/booknow"
 EMAIL = "admin@swifycleaning.com"
 IG = "https://www.instagram.com/swifycleaning/"
 
@@ -26,7 +31,7 @@ ADDONS = [
 ]
 
 
-def page(path, title, desc, body, current="", dark_hero=False, body_class="", extra_js=""):
+def page(path, title, desc, body, current=None, dark_hero=False, body_class="", extra_js="", noindex=False):
     depth = path.count("/") + 1 if path else 0
     up = "../" * depth
     def href(p):
@@ -45,7 +50,7 @@ def page(path, title, desc, body, current="", dark_hero=False, body_class="", ex
   <meta property="og:description" content="{desc}">
   <meta property="og:image" content="{up}assets/img/hero.webp">
   <meta name="theme-color" content="#f5f1ea">
-  <link rel="preload" href="{up}assets/fonts/cormorant-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+{'  <meta name="robots" content="noindex, nofollow">' + chr(10) if noindex else ''}  <link rel="preload" href="{up}assets/fonts/cormorant-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{up}assets/css/style.css">
 </head>
 <body class="{body_class}">
@@ -324,8 +329,22 @@ about = f"""
 """
 page("about", "About & FAQs — Swify", "About Swify, how we vet cleaning professionals, and answers to common questions.", about, current="about/")
 
-# ---------------- BOOK ----------------
-book = f"""
+# ---------------- BOOK (form + Stripe checkout) ----------------
+API_JS = f'  <script>window.SWIFY_API_BASE = "{API_BASE}";</script>\n  <script src="{{UP}}assets/js/api.js"></script>\n'
+book = """
+    <section class="app">
+      <div class="wrap">
+        <p class="eyebrow">Book a cleaning</p>
+        <h1>Let’s get you <em>matched.</em></h1>
+        <p class="lead">Tell us about your home, compare independent professionals and their prices, and book in a few minutes.</p>
+        <div id="booking" data-up="{UP}"></div>
+      </div>
+    </section>
+"""
+page("book" if NEW_BOOKING_LIVE else "book/new", "Book a Cleaning — Swify", "Book a home cleaning in Los Angeles with a vetted, independent professional through Swify.", book, current="book/",
+     extra_js=API_JS + '  <script src="{UP}assets/js/booking.js"></script>\n', noindex=not NEW_BOOKING_LIVE)
+if not NEW_BOOKING_LIVE:
+    legacy = f"""
     <section class="page-hero" style="padding-bottom:40px">
       <div class="wrap reveal">
         <p class="eyebrow">Book a cleaning</p>
@@ -335,12 +354,33 @@ book = f"""
     </section>
     <section style="padding-top:0">
       <div class="wrap">
-        <div class="booking-shell"><iframe class="booking-frame" src="{BOOK_URL}?embed=true" title="Book a cleaning with Swify"></iframe></div>
-        <p class="fine" style="text-align:center;margin-top:18px">Form not loading? <a href="{BOOK_URL}" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
+        <div class="booking-shell"><iframe class="booking-frame" src="{BOOKINGKOALA_URL}?embed=true" title="Book a cleaning with Swify"></iframe></div>
+        <p class="fine" style="text-align:center;margin-top:18px">Form not loading? <a href="{BOOKINGKOALA_URL}" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
       </div>
     </section>
 """
-page("book", "Book a Cleaning — Swify", "Request a home cleaning in Los Angeles through Swify.", book, current="book/")
+    page("book", "Book a Cleaning — Swify", "Request a home cleaning in Los Angeles through Swify.", legacy, current="book/")
+
+success = """
+    <section class="app">
+      <div class="wrap" id="result"><p class="muted">Confirming your booking…</p></div>
+    </section>
+"""
+page("book/success", "Booking confirmed — Swify", "Your Swify booking.", success, extra_js=API_JS + '  <script src="{UP}assets/js/success.js"></script>\n', noindex=True)
+
+portal = """
+    <section class="app">
+      <div class="wrap" id="portal"><p class="muted">Loading your portal…</p></div>
+    </section>
+"""
+page("pro", "Professional portal — Swify", "Swify professional portal.", portal, extra_js=API_JS + '  <script src="{UP}assets/js/pro.js"></script>\n', noindex=True)
+
+admin = """
+    <section class="app">
+      <div class="wrap" id="admin" data-up="{UP}"><p class="muted">Loading…</p></div>
+    </section>
+"""
+page("admin", "Admin — Swify", "Swify admin.", admin, extra_js=API_JS + '  <script src="{UP}assets/js/admin.js"></script>\n', noindex=True)
 
 # redirect old URLs
 for old, new in [("pricing", "book/"), ("about-us", "about/")]:

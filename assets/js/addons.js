@@ -161,6 +161,7 @@
     card.querySelector('img').src = UP + 'assets/img/addons/' + k + '.webp';
     card.querySelector('h2').textContent = it.name;
     card.querySelector('p').textContent = it.desc;
+    card.querySelector('a.btn').href = UP + 'book/?addon=' + encodeURIComponent(k);
     card.hidden = false;
     requestAnimationFrame(function () { card.classList.add('show'); });
   }
