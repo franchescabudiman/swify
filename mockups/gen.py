@@ -82,11 +82,11 @@ page("a", "Mockup A — Still life", """
 # ---------- B: Editorial split (light, magazine) ----------
 page("b", "Mockup B — Editorial", """
 body{background:#f5f1ea}
-.b-hero{display:grid;grid-template-columns:44% 56%;height:900px}
+.b-hero{display:grid;grid-template-columns:44% 56%;grid-template-rows:900px;height:900px;overflow:hidden}
 .b-hero .copy{display:flex;flex-direction:column;justify-content:flex-end;padding:0 56px 70px}
-.b-hero h1{font-size:clamp(60px,6.6vw,112px);line-height:.95;font-weight:300}
+.b-hero h1{font-size:clamp(56px,6vw,96px);line-height:.95;font-weight:300}
 .b-hero p.sub{margin:30px 0 40px;font-size:17px;color:#6f675c;max-width:30ch}
-.b-hero .photo{position:relative}.b-hero .photo img{width:100%;height:100%;object-fit:cover;object-position:center 85%;display:block}
+.b-hero .photo{position:relative;overflow:hidden}.b-hero .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 85%;display:block}
 .b-hero .tag{position:absolute;right:28px;bottom:26px;color:#f5f1ea;font-size:11px;letter-spacing:.22em;text-transform:uppercase}
 .b-full{position:relative;height:780px}
 .b-full img{width:100%;height:100%;object-fit:cover;display:block}
