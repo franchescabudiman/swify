@@ -6,7 +6,7 @@ import os, json
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 # Booking backend (Cloudflare Worker). Update after deploying the worker — see worker/README.md
-API_BASE = "https://swify-api.REPLACE.workers.dev"
+API_BASE = "https://swify-api.shiny-bird-78ac.workers.dev"
 # False: /book/ keeps the BookingKoala form and the new system is testable at /book/new/.
 # True:  /book/ is the new Stripe booking form (also set BOOK_PATH = "/book/" in worker/wrangler.toml).
 NEW_BOOKING_LIVE = False
