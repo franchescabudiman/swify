@@ -54,7 +54,7 @@ def page(name, title, css, body):
 
 # ---------- A: Still life (cinematic full-bleed, almost no words) ----------
 page("a", "Mockup A — Still life", """
-.a-hero{position:relative;height:100vh;min-height:760px;color:#f5f1ea;overflow:hidden}
+.a-hero{position:relative;height:900px;color:#f5f1ea;overflow:hidden}
 .a-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:78% center}
 .a-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,12,.45),rgba(20,16,12,.05) 55%,rgba(20,16,12,.25))}
 .a-hero .copy{position:absolute;left:56px;top:150px;z-index:2}
@@ -82,13 +82,13 @@ page("a", "Mockup A — Still life", """
 # ---------- B: Editorial split (light, magazine) ----------
 page("b", "Mockup B — Editorial", """
 body{background:#f5f1ea}
-.b-hero{display:grid;grid-template-columns:44% 56%;height:100vh;min-height:760px}
+.b-hero{display:grid;grid-template-columns:44% 56%;height:900px}
 .b-hero .copy{display:flex;flex-direction:column;justify-content:flex-end;padding:0 56px 70px}
 .b-hero h1{font-size:clamp(60px,6.6vw,112px);line-height:.95;font-weight:300}
 .b-hero p.sub{margin:30px 0 40px;font-size:17px;color:#6f675c;max-width:30ch}
 .b-hero .photo{position:relative}.b-hero .photo img{width:100%;height:100%;object-fit:cover;object-position:center 85%;display:block}
 .b-hero .tag{position:absolute;right:28px;bottom:26px;color:#f5f1ea;font-size:11px;letter-spacing:.22em;text-transform:uppercase}
-.b-full{position:relative;height:88vh;min-height:620px}
+.b-full{position:relative;height:780px}
 .b-full img{width:100%;height:100%;object-fit:cover;display:block}
 .b-full h2{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;color:#f5f1ea;font-size:clamp(48px,5.6vw,92px);font-weight:300;text-shadow:0 2px 30px rgba(0,0,0,.25)}
 .b-steps{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(0,0,0,.1);border-bottom:1px solid rgba(0,0,0,.1);margin:0 56px}
@@ -112,7 +112,7 @@ body{background:#f5f1ea}
 # ---------- C: Gallery (dark, framed, wordmark) ----------
 page("c", "Mockup C — Gallery", """
 body{background:#161412;color:#efe9df}
-.c-hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:96px 56px 50px;text-align:center}
+.c-hero{min-height:900px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:96px 56px 50px;text-align:center}
 .c-hero .word{font-family:var(--serif);font-weight:300;font-size:clamp(80px,11vw,170px);letter-spacing:.14em;line-height:.85;margin-right:-.14em}
 .c-hero .frame{margin:44px auto 0;width:min(1040px,80vw);aspect-ratio:16/6.4;overflow:hidden;outline:1px solid rgba(168,135,79,.6);outline-offset:14px}
 .c-hero .frame img{width:100%;height:100%;object-fit:cover;display:block}
