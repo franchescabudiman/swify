@@ -15,7 +15,7 @@ BOOK_PATH = "/book/new/"
 [[d1_databases]]
 binding = "DB"
 database_name = "swify"
-database_id = "REPLACE_WITH_D1_DATABASE_ID"
+database_id = "f5da43f9-7659-4b18-b7d7-0554dbe92ff4"
 migrations_dir = "migrations"
 
 # Secrets (set in Cloudflare → Worker → Settings → Variables and Secrets, type "Secret"):
