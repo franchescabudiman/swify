@@ -8,7 +8,7 @@ SITE_URL = "https://www.swifycleaning.com"
 ALLOWED_ORIGINS = "https://www.swifycleaning.com,https://swifycleaning.com,https://franchescabudiman.github.io"
 ALLOW_LOCALHOST = "false"
 # where the booking form lives: "/book/new/" while testing, "/book/" once live (match NEW_BOOKING_LIVE in build.py)
-BOOK_PATH = "/book/new/"
+BOOK_PATH = "/book/"
 
 # Create once in Cloudflare (Workers & Pages → D1 → Create database, name: swify),
 # then paste its Database ID below.

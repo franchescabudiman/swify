@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Book a Cleaning — Swify</title>
-  <meta name="description" content="Request a home cleaning in Los Angeles through Swify.">
+  <meta name="description" content="Book a home cleaning in Los Angeles with a vetted, independent professional through Swify.">
   <meta property="og:title" content="Book a Cleaning — Swify">
-  <meta property="og:description" content="Request a home cleaning in Los Angeles through Swify.">
+  <meta property="og:description" content="Book a home cleaning in Los Angeles with a vetted, independent professional through Swify.">
   <meta property="og:image" content="../assets/img/hero.webp">
   <meta name="theme-color" content="#f5f1ea">
   <link rel="preload" href="../assets/fonts/cormorant-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -29,17 +29,12 @@
   </header>
   <main id="main">
 
-    <section class="page-hero" style="padding-bottom:40px">
-      <div class="wrap reveal">
+    <section class="app">
+      <div class="wrap">
         <p class="eyebrow">Book a cleaning</p>
         <h1>Let’s get you <em>matched.</em></h1>
-        <p class="lead">Tell us about your home and choose a time. We’ll confirm your cleaning professional shortly after.</p>
-      </div>
-    </section>
-    <section style="padding-top:0">
-      <div class="wrap">
-        <div class="booking-shell"><iframe class="booking-frame" src="https://swify.bookingkoala.com/booknow?embed=true" title="Book a cleaning with Swify"></iframe></div>
-        <p class="fine" style="text-align:center;margin-top:18px">Form not loading? <a href="https://swify.bookingkoala.com/booknow" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
+        <p class="lead">Tell us about your home, compare independent professionals and their prices, and book in a few minutes.</p>
+        <div id="booking" data-up="../"></div>
       </div>
     </section>
 
@@ -83,5 +78,8 @@
     </div>
   </footer>
   <script src="../assets/js/main.js"></script>
+  <script>window.SWIFY_API_BASE = "https://swify-api.shiny-bird-78ac.workers.dev";</script>
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/booking.js"></script>
 </body>
 </html>

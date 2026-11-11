@@ -9,7 +9,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 API_BASE = "https://swify-api.shiny-bird-78ac.workers.dev"
 # False: /book/ keeps the BookingKoala form and the new system is testable at /book/new/.
 # True:  /book/ is the new Stripe booking form (also set BOOK_PATH = "/book/" in worker/wrangler.toml).
-NEW_BOOKING_LIVE = False
+NEW_BOOKING_LIVE = True
 BOOKINGKOALA_URL = "https://swify.bookingkoala.com/booknow"
 EMAIL = "admin@swifycleaning.com"
 IG = "https://www.instagram.com/swifycleaning/"
@@ -394,5 +394,10 @@ for old, new in [("pricing", "book/"), ("about-us", "about/")]:
     os.makedirs(os.path.join(ROOT, old), exist_ok=True)
     open(os.path.join(ROOT, old, "index.html"), "w").write(
         f'<!DOCTYPE html><html><head><meta charset="utf-8"><title>Redirecting…</title><meta http-equiv="refresh" content="0; url=../{new}"><link rel="canonical" href="../{new}"></head><body><a href="../{new}">Continue</a></body></html>\n'
+    )
+if NEW_BOOKING_LIVE:  # old test address forwards to the real booking page
+    os.makedirs(os.path.join(ROOT, "book", "new"), exist_ok=True)
+    open(os.path.join(ROOT, "book", "new", "index.html"), "w").write(
+        '<!DOCTYPE html><html><head><meta charset="utf-8"><title>Redirecting…</title><meta http-equiv="refresh" content="0; url=../"><link rel="canonical" href="../"></head><body><a href="../">Continue</a></body></html>\n'
     )
 print("built")
