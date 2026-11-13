@@ -142,7 +142,7 @@ P.update({
     "windowbath": "photo-1772567732935-35bead86decc",
     "bedmade": "photo-1631048501786-4e97f20eac71",
     "suite": "photo-1731336478850-6bce7235e320",
-    "joshua": "photo-1774578342100-f779e988c83d",
+    "joshua": "photo-1633836331520-e35c668f1f9d",
 })
 def a_variant(name, title, hero, pos, h1, tri, cta, copy_pos="left:56px;bottom:72px", shade="rgba(20,16,12,.38),rgba(20,16,12,0) 35%,rgba(20,16,12,.5)", split_img=None):
     page(name, title, f"""
