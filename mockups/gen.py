@@ -141,6 +141,7 @@ P.update({
     "leafshadow": "photo-1654179280639-3de6d9d7f996",
     "windowbath": "photo-1772567732935-35bead86decc",
     "bedmade": "photo-1631048501786-4e97f20eac71",
+    "suite": "photo-1647792855184-af42f1720b91",
 })
 def a_variant(name, title, hero, pos, h1, tri, cta, copy_pos="left:56px;bottom:72px", shade="rgba(20,16,12,.38),rgba(20,16,12,0) 35%,rgba(20,16,12,.5)"):
     page(name, title, f"""
@@ -171,7 +172,7 @@ def a_variant(name, title, hero, pos, h1, tri, cta, copy_pos="left:56px;bottom:7
 
 a_variant("d", "Mockup D — Morning bath", "sheerbath", "center 60%", "Come home<br>to <em>clean.</em>",
           ["dining", "leafshadow", "vase"], "Immaculate, <em>quietly.</em>")
-a_variant("e", "Mockup E — Made bed", "bedmade", "center 60%", "Your home,<br><em>cared for.</em>",
+a_variant("e", "Mockup E — Made bed", "suite", "center 55%", "Your home,<br><em>cared for.</em>",
           ["sheerbath", "dining", "curtain"], "Come home to <em>clean.</em>")
 a_variant("f", "Mockup F — Afternoon light", "dining", "center 55%", "Every room,<br><em>at rest.</em>",
           ["sheerbath", "curtain", "leafshadow"], "Come home to <em>clean.</em>")
