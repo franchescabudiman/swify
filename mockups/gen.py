@@ -141,7 +141,7 @@ P.update({
     "leafshadow": "photo-1654179280639-3de6d9d7f996",
     "windowbath": "photo-1772567732935-35bead86decc",
     "bedmade": "photo-1631048501786-4e97f20eac71",
-    "suite": "photo-1647792855184-af42f1720b91",
+    "suite": "photo-1731336478850-6bce7235e320",
 })
 def a_variant(name, title, hero, pos, h1, tri, cta, copy_pos="left:56px;bottom:72px", shade="rgba(20,16,12,.38),rgba(20,16,12,0) 35%,rgba(20,16,12,.5)"):
     page(name, title, f"""
