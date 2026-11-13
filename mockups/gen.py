@@ -133,4 +133,45 @@ body{background:#161412;color:#efe9df}
 <div class="c-light">{ADDON_SECTION}</div>
 <section class="c-q" style="padding-top:130px"><h2>Come home to <em>clean.</em></h2><p style="margin-top:40px"><a class="btn" style="background:#efe9df;color:#161412" href="#">Book a cleaning <span class="arr">→</span></a></p></section>
 {FOOT}""")
-print("ok")
+
+# ---------- D/E/F: variations of A with home (not product) hero photos ----------
+P.update({
+    "sheerbath": "photo-1778936317499-2f21de6baab6",
+    "dining": "photo-1771596378772-858323ca698f",
+    "leafshadow": "photo-1654179280639-3de6d9d7f996",
+    "windowbath": "photo-1772567732935-35bead86decc",
+})
+def a_variant(name, title, hero, pos, h1, tri, cta, copy_pos="left:56px;bottom:72px", shade="rgba(20,16,12,.38),rgba(20,16,12,0) 35%,rgba(20,16,12,.5)"):
+    page(name, title, f"""
+.a-hero{{position:relative;height:900px;color:#f5f1ea;overflow:hidden}}
+.a-hero img{{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{pos}}}
+.a-hero:after{{content:"";position:absolute;inset:0;background:linear-gradient(180deg,{shade})}}
+.a-hero .copy{{position:absolute;{copy_pos};z-index:2}}
+.a-hero h1{{font-size:clamp(60px,7.4vw,116px);line-height:.92;font-weight:300}}
+.a-hero .row{{display:flex;align-items:center;gap:34px;margin-top:38px;font-size:12px;letter-spacing:.22em;text-transform:uppercase}}
+.a-hero .btn{{background:#f5f1ea;color:#1d1b19}}
+.a-tri{{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:18px;padding:18px}}
+.a-tri figure{{margin:0;position:relative}}.a-tri img{{width:100%;height:640px;object-fit:cover;display:block}}
+.a-tri figcaption{{position:absolute;left:24px;bottom:20px;color:#f5f1ea;font-family:var(--serif);font-size:38px;font-style:italic;text-shadow:0 1px 18px rgba(0,0,0,.35)}}
+.a-cta{{background:#1d1b19;color:#f5f1ea;text-align:center;padding:150px 20px}}
+.a-cta h2{{font-size:clamp(54px,6vw,96px);font-weight:300}}
+""", nav("#f5f1ea") + f"""
+<section class="a-hero"><img src="{img(P[hero],2400)}" alt="">
+  <div class="copy"><h1>{h1}</h1>
+  <div class="row"><a class="btn" href="#">Book a cleaning <span class="arr">→</span></a><span>Vetted independent professionals · Los Angeles</span></div></div></section>
+<section class="a-tri">
+  <figure><img src="{img(P[tri[0]],1200)}" alt=""><figcaption>Vetted.</figcaption></figure>
+  <figure><img src="{img(P[tri[1]],900)}" alt=""><figcaption>Insured.</figcaption></figure>
+  <figure><img src="{img(P[tri[2]],900)}" alt=""><figcaption>Effortless.</figcaption></figure>
+</section>
+{ADDON_SECTION}
+<section class="a-cta"><h2>{cta}</h2><p style="margin-top:40px"><a class="btn" style="background:#f5f1ea;color:#1d1b19" href="#">Book a cleaning <span class="arr">→</span></a></p></section>
+{FOOT}""")
+
+a_variant("d", "Mockup D — Morning bath", "sheerbath", "center 60%", "Come home<br>to <em>clean.</em>",
+          ["sunbed", "leafshadow", "vase"], "Immaculate, <em>quietly.</em>")
+a_variant("e", "Mockup E — Sunlit bed", "sunbed", "center 78%", "Your home,<br><em>cared for.</em>",
+          ["sheerbath", "dining", "curtain"], "Come home to <em>clean.</em>")
+a_variant("f", "Mockup F — Afternoon light", "dining", "center 55%", "Every room,<br><em>at rest.</em>",
+          ["linen", "windowbath", "leafshadow"], "Come home to <em>clean.</em>")
+print("ok2")

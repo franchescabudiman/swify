@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
+<title>Mockup F — Afternoon light</title><link rel="stylesheet" href="../../assets/css/style.css"><style>
+main section, body > section{padding:0}
+.m-nav{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:30px 56px;}
+.m-nav a{color:inherit;text-decoration:none}
+.m-nav .links{display:flex;gap:40px;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.m-nav .brand{font-family:var(--serif);font-size:30px}
+.m-foot{padding:46px 56px;display:flex;justify-content:space-between;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8b8478;border-top:1px solid rgba(0,0,0,.08)}
+
+.a-hero{position:relative;height:900px;color:#f5f1ea;overflow:hidden}
+.a-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.a-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,12,.38),rgba(20,16,12,0) 35%,rgba(20,16,12,.5))}
+.a-hero .copy{position:absolute;left:56px;bottom:72px;z-index:2}
+.a-hero h1{font-size:clamp(60px,7.4vw,116px);line-height:.92;font-weight:300}
+.a-hero .row{display:flex;align-items:center;gap:34px;margin-top:38px;font-size:12px;letter-spacing:.22em;text-transform:uppercase}
+.a-hero .btn{background:#f5f1ea;color:#1d1b19}
+.a-tri{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:18px;padding:18px}
+.a-tri figure{margin:0;position:relative}.a-tri img{width:100%;height:640px;object-fit:cover;display:block}
+.a-tri figcaption{position:absolute;left:24px;bottom:20px;color:#f5f1ea;font-family:var(--serif);font-size:38px;font-style:italic;text-shadow:0 1px 18px rgba(0,0,0,.35)}
+.a-cta{background:#1d1b19;color:#f5f1ea;text-align:center;padding:150px 20px}
+.a-cta h2{font-size:clamp(54px,6vw,96px);font-weight:300}
+</style></head>
+<body><nav class="m-nav" style="color:#f5f1ea"><a class="brand" href="#">Swify<span style="color:var(--gold)">.</span></a>
+<div class="links"><a href="#">Add-ons</a><a href="#">Professionals</a><a href="#">About</a><a href="#">Book</a></div></nav>
+<section class="a-hero"><img src="https://images.unsplash.com/photo-1771596378772-858323ca698f?w=2400&q=80&auto=format" alt="">
+  <div class="copy"><h1>Every room,<br><em>at rest.</em></h1>
+  <div class="row"><a class="btn" href="#">Book a cleaning <span class="arr">→</span></a><span>Vetted independent professionals · Los Angeles</span></div></div></section>
+<section class="a-tri">
+  <figure><img src="https://images.unsplash.com/photo-1777506549593-c3c5ff0e581e?w=1200&q=80&auto=format" alt=""><figcaption>Vetted.</figcaption></figure>
+  <figure><img src="https://images.unsplash.com/photo-1772567732935-35bead86decc?w=900&q=80&auto=format" alt=""><figcaption>Insured.</figcaption></figure>
+  <figure><img src="https://images.unsplash.com/photo-1654179280639-3de6d9d7f996?w=900&q=80&auto=format" alt=""><figcaption>Effortless.</figcaption></figure>
+</section>
+
+<section class="teaser" style="padding:120px 0 110px !important">
+  <div class="wrap" style="display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap">
+    <div><p class="eyebrow">Add-ons</p><h2>The <em>finishing</em> touches.</h2></div>
+    <a class="btn btn-line" href="#">Explore add-ons <span class="arr">→</span></a>
+  </div>
+  <div class="marquee" aria-hidden="true"><img src="../../assets/img/addons/oven.webp" alt=""><img src="../../assets/img/addons/fridge.webp" alt=""><img src="../../assets/img/addons/dishes.webp" alt=""><img src="../../assets/img/addons/laundry.webp" alt=""><img src="../../assets/img/addons/linens.webp" alt=""><img src="../../assets/img/addons/window.webp" alt=""><img src="../../assets/img/addons/blinds.webp" alt=""><img src="../../assets/img/addons/cabinet.webp" alt=""><img src="../../assets/img/addons/walls.webp" alt=""><img src="../../assets/img/addons/baseboards.webp" alt=""><img src="../../assets/img/addons/organizing.webp" alt=""><img src="../../assets/img/addons/oven.webp" alt=""><img src="../../assets/img/addons/fridge.webp" alt=""><img src="../../assets/img/addons/dishes.webp" alt=""><img src="../../assets/img/addons/laundry.webp" alt=""><img src="../../assets/img/addons/linens.webp" alt=""><img src="../../assets/img/addons/window.webp" alt=""><img src="../../assets/img/addons/blinds.webp" alt=""><img src="../../assets/img/addons/cabinet.webp" alt=""><img src="../../assets/img/addons/walls.webp" alt=""><img src="../../assets/img/addons/baseboards.webp" alt=""><img src="../../assets/img/addons/organizing.webp" alt=""></div>
+</section>
+<section class="a-cta"><h2>Come home to <em>clean.</em></h2><p style="margin-top:40px"><a class="btn" style="background:#f5f1ea;color:#1d1b19" href="#">Book a cleaning <span class="arr">→</span></a></p></section>
+<footer class="m-foot"><span>Swify · Los Angeles</span><span>Referral service · independent professionals</span></footer><script>(function(){var n=+new URLSearchParams(location.search).get('s')||0,k=0;Array.from(document.body.children).forEach(function(e){if(e.tagName==='SCRIPT')return;if(e.tagName==='NAV'){if(n)e.style.display='none';return;}if(k++<n)e.style.display='none';});})();</script></body></html>
