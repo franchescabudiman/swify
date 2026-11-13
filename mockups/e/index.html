@@ -11,7 +11,7 @@ main section, body > section{padding:0}
 .a-hero{position:relative;height:900px;color:#f5f1ea;overflow:hidden}
 .a-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
 .a-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,12,.38),rgba(20,16,12,0) 35%,rgba(20,16,12,.5))}
-.a-hero .copy{position:absolute;left:56px;bottom:72px;z-index:2}
+.a-hero .copy{position:absolute;left:56px;top:50%;transform:translateY(-50%);z-index:2}
 .a-hero h1{font-size:clamp(60px,7.4vw,116px);line-height:.92;font-weight:300}
 .a-hero .row{display:flex;align-items:center;gap:34px;margin-top:38px;font-size:12px;letter-spacing:.22em;text-transform:uppercase}
 .a-hero .btn{background:#f5f1ea;color:#1d1b19}
@@ -20,10 +20,13 @@ main section, body > section{padding:0}
 .a-tri figcaption{position:absolute;left:24px;bottom:20px;color:#f5f1ea;font-family:var(--serif);font-size:38px;font-style:italic;text-shadow:0 1px 18px rgba(0,0,0,.35)}
 .a-cta{background:#1d1b19;color:#f5f1ea;text-align:center;padding:150px 20px}
 .a-cta h2{font-size:clamp(54px,6vw,96px);font-weight:300}
+.a-hero.split{background:#2b1d14}
+.a-hero.split img{left:auto;right:0;width:auto;height:100%;aspect-ratio:5/6;object-fit:cover}
+.a-hero.split:after{background:linear-gradient(90deg,#2b1d14 0,#2b1d14 calc(100% - 750px),rgba(43,29,20,0) calc(100% - 560px))}
 </style></head>
 <body><nav class="m-nav" style="color:#f5f1ea"><a class="brand" href="#">Swify<span style="color:var(--gold)">.</span></a>
 <div class="links"><a href="#">Add-ons</a><a href="#">Professionals</a><a href="#">About</a><a href="#">Book</a></div></nav>
-<section class="a-hero"><img src="https://images.unsplash.com/photo-1731336478850-6bce7235e320?w=2400&q=80&auto=format" alt="">
+<section class="a-hero split"><img src="../img/e-bedroom.jpg" alt="">
   <div class="copy"><h1>Your home,<br><em>cared for.</em></h1>
   <div class="row"><a class="btn" href="#">Book a cleaning <span class="arr">→</span></a><span>Vetted independent professionals · Los Angeles</span></div></div></section>
 <section class="a-tri">

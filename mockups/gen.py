@@ -143,7 +143,7 @@ P.update({
     "bedmade": "photo-1631048501786-4e97f20eac71",
     "suite": "photo-1731336478850-6bce7235e320",
 })
-def a_variant(name, title, hero, pos, h1, tri, cta, copy_pos="left:56px;bottom:72px", shade="rgba(20,16,12,.38),rgba(20,16,12,0) 35%,rgba(20,16,12,.5)"):
+def a_variant(name, title, hero, pos, h1, tri, cta, copy_pos="left:56px;bottom:72px", shade="rgba(20,16,12,.38),rgba(20,16,12,0) 35%,rgba(20,16,12,.5)", split_img=None):
     page(name, title, f"""
 .a-hero{{position:relative;height:900px;color:#f5f1ea;overflow:hidden}}
 .a-hero img{{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{pos}}}
@@ -157,8 +157,11 @@ def a_variant(name, title, hero, pos, h1, tri, cta, copy_pos="left:56px;bottom:7
 .a-tri figcaption{{position:absolute;left:24px;bottom:20px;color:#f5f1ea;font-family:var(--serif);font-size:38px;font-style:italic;text-shadow:0 1px 18px rgba(0,0,0,.35)}}
 .a-cta{{background:#1d1b19;color:#f5f1ea;text-align:center;padding:150px 20px}}
 .a-cta h2{{font-size:clamp(54px,6vw,96px);font-weight:300}}
+.a-hero.split{{background:#2b1d14}}
+.a-hero.split img{{left:auto;right:0;width:auto;height:100%;aspect-ratio:5/6;object-fit:cover}}
+.a-hero.split:after{{background:linear-gradient(90deg,#2b1d14 0,#2b1d14 calc(100% - 750px),rgba(43,29,20,0) calc(100% - 560px))}}
 """, nav("#f5f1ea") + f"""
-<section class="a-hero"><img src="{img(P[hero],2400)}" alt="">
+<section class="a-hero{' split' if split_img else ''}"><img src="{split_img or img(P[hero],2400)}" alt="">
   <div class="copy"><h1>{h1}</h1>
   <div class="row"><a class="btn" href="#">Book a cleaning <span class="arr">→</span></a><span>Vetted independent professionals · Los Angeles</span></div></div></section>
 <section class="a-tri">
@@ -173,7 +176,7 @@ def a_variant(name, title, hero, pos, h1, tri, cta, copy_pos="left:56px;bottom:7
 a_variant("d", "Mockup D — Morning bath", "sheerbath", "center 60%", "Come home<br>to <em>clean.</em>",
           ["dining", "leafshadow", "vase"], "Immaculate, <em>quietly.</em>")
 a_variant("e", "Mockup E — Made bed", "suite", "center 55%", "Your home,<br><em>cared for.</em>",
-          ["sheerbath", "dining", "curtain"], "Come home to <em>clean.</em>")
+          ["sheerbath", "dining", "curtain"], "Come home to <em>clean.</em>", copy_pos="left:56px;top:50%;transform:translateY(-50%)", split_img="../img/e-bedroom.jpg")
 a_variant("f", "Mockup F — Afternoon light", "dining", "center 55%", "Every room,<br><em>at rest.</em>",
           ["sheerbath", "curtain", "leafshadow"], "Come home to <em>clean.</em>")
 print("ok2")
